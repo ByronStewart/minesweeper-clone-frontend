@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import { ProvideAuth } from "./auth/useAuth";
 import BaseLayout from "./components/layouts/BaseLayout";
 import MinesweeperPage from "./components/Minesweeper/MinesweeperPage";
@@ -12,7 +12,7 @@ import { MinesweeperLayout } from "./components/layouts/GameLayout";
 function App() {
   return (
     <ProvideAuth>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route element={<BaseLayout />}>
             <Route path="/" element={<IndexPage />}></Route>
@@ -25,7 +25,7 @@ function App() {
             <Route path="/instructions" element={<InstructionsPage />}></Route>
           </Route>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </ProvideAuth>
   );
 }
